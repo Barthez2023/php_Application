@@ -45,6 +45,78 @@
         echo 'division de '.$nbr1.' et de '.$nbr2.' est egal a : '.$division.'<br/>';                //affiche 2
         echo 'modulo de '.$nbr1.' et de '.$nbr2.' est egal a : '.$modulo.'<br/>';                      //affiche 0
 
+        echo '<br/>';
+        echo 'NOUS ALLONS NOUS PENCHES SUR LES CONDITIONS <br/>';
+
+        //La condition if
+
+        $heure_connection=19;
+        if ($heure_connection<18) {
+            echo "Passez une bonne journee <br/>";
+            $journee="Oui";
+        }
+        else{
+            echo "Passez une bonne soiree <br/>";
+            $journee="Nom";
+        }
+        echo "Fait'il jour ?La reponse est" .$journee.".<br/>";
+
+        //La condition else
+
+        $note=21;
+        if ($note==0) {
+            echo "Tu es nul! <br/>";
+        }
+        elseif ($note>=4 && $note<8) {
+           echo "C'est tres mauvais <br/>";
+        }
+        elseif ($note>=8 && $note<12 ) {
+            echo "c'est n'est pas bon <br/>";
+        }
+        elseif ($note>=12 && $note<16) {
+           echo "C'est assez bien <br/>";
+        }
+        elseif ($note>=16 && $note<20) {
+            echo "Bien joue <br/>";
+        }
+        elseif ($note==20) {
+            echo "Parfait <br/>";
+        }
+        else {
+            echo "Je n'ai pas de commentaire pour cette note <br/>";
+        }
+
+        //on peut remplacer cette configuration avec le switch
+        switch ($note) {
+            case ($note==0):
+                echo "Tu es nul! <br/>";
+                break;
+            case ($note>=4 && $note<8):
+                echo "C'est tres mauvais <br/>";
+                break;
+            case ($note>=8 && $note<12):
+                echo "c'est n'est pas bon <br/>";
+                break;
+            case ($note>=12 && $note<16):
+                echo "C'est assez bien <br/>";
+                break;
+            case ($note>=16 && $note<20):
+                echo "Bien joue <br/>";
+                break;
+            case ($note==20):
+                echo"Parfait <br/>";
+                break;                
+            default:
+                echo "Je n'ai pas de commentaire pour cette note <br/>";
+                break;
+        }
+
+        //Les conditions ternaires
+        $age=24;
+        $autorisation=($age>=18)?true:false; //on retourne dans la variable autorisation la valeur true si age>=18 et false sinon
+        $autorisation=($age>=18)?'Tu es deja majeur ':'Tu es encore mineur';//on retourne dans la variable autorisation la valeur true si age>=18 et false sinon
+        echo $autorisation;
+
 
     ?>
     
