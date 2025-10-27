@@ -114,13 +114,13 @@
         //Les conditions ternaires
         $age=24;
         $autorisation=($age>=18)?true:false; //on retourne dans la variable autorisation la valeur true si age>=18 et false sinon
-        $autorisation=($age>=18)?'Tu es deja majeur ':'Tu es encore mineur';//on retourne dans la variable autorisation la valeur true si age>=18 et false sinon
-        echo $autorisation;
+        $autorisation=($age>=18)?'Tu es deja majeur ':'Tu es encore mineur <br/>';//on retourne dans la variable autorisation la valeur true si age>=18 et false sinon
+        echo $autorisation.'<br/>';
 
         
         //Les boucles
         echo '<br/>';
-        echo 'NOUS ALLONS NOUS PENCHES SUR LES Boucles <br/>';
+        echo 'NOUS ALLONS NOUS PENCHES SUR LES BOUCLES <br/>';
         /*1- La boucle while execute un bloc de code tant que une condition est verifie*/
         $x=1;
         while ($x <= 10) {
@@ -140,6 +140,45 @@
             echo 'Ceci est le nombre i :'.$i.'<br/>';
         }
         /*for each permet de parcourir les tableau*/
+
+        //Les Tableaux
+        echo '<br/>';
+        echo 'NOUS ALLONS NOUS PENCHES SUR LES TABLEAUX <br/>';
+        /*les tableaux numerote ou indexe*/
+        $prenom=array('Pierre','Paul','Jacques');
+       /* $pnom[0]='Jean';
+        $pnom[1]='John';
+        $pnom[2]='Joan';*/
+
+        /*Tableau associatif on peut les attribues des cles textuelles par rapport au index des tableaux indexes*/
+        $age=array(
+            'Pierre'=>24,
+            'Paul' =>22,
+            'Jacques'=>'Nom rensigne'
+        );
+        /*//on peut ecrit ce tableu d'une autre facon
+        $age['Pierre']=24;
+        $age['Paul']=22;
+        $age['Jacques']='Nom rensigne';*/
+        echo $prenom[0].'<br/>';//affiche Pierre
+        echo $age['Pierre'].'<br/>';
+
+        for ($i=0; $i <3; $i++) { 
+           echo $prenom[$i].'<br/>';
+        }
+
+        //ici on recupere les valeurs
+        foreach ($age as $values) {
+            echo $values.'<br/>';
+        }
+        //ici on recupere les cles et les valeurs
+        foreach ($age as $key => $value) {
+            echo "L'age de ".$key." est ".$value.'<br/>';
+        }
+
+
+
+
 
 
     ?>
