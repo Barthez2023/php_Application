@@ -117,6 +117,30 @@
         $autorisation=($age>=18)?'Tu es deja majeur ':'Tu es encore mineur';//on retourne dans la variable autorisation la valeur true si age>=18 et false sinon
         echo $autorisation;
 
+        
+        //Les boucles
+        echo '<br/>';
+        echo 'NOUS ALLONS NOUS PENCHES SUR LES Boucles <br/>';
+        /*1- La boucle while execute un bloc de code tant que une condition est verifie*/
+        $x=1;
+        while ($x <= 10) {
+            echo 'Ceci est le nombre x :'.$x.'<br/>';
+            $x++;
+        }
+
+        /*2-do...while execute le code une premiere fois avant de tester la condition*/
+        $y=1;
+        do {
+            echo 'Ceci est le nombre y :'.$y.'<br/>';
+            $y++;
+        } while ($y <= 10);
+
+        /*3-for generalement quand on sais le nombre d'iteration*/
+        for ($i=1; $i <=10 ; $i++) { 
+            echo 'Ceci est le nombre i :'.$i.'<br/>';
+        }
+        /*for each permet de parcourir les tableau*/
+
 
     ?>
     
