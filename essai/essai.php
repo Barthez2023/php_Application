@@ -176,15 +176,46 @@
             echo "L'age de ".$key." est ".$value.'<br/>';
         }
 
+        //utilisation de la fonction print_r
+        /*La fonction print_r() en PHP sert a afficher le contenu complet 
+        d'une variable - surtout utile pour les tableaux (array) ou les objets.*/
+        print_r($age);
+        echo '<br/>';
+        echo '<pre>';
+        print_r($age);
+        echo '</pre>';
+        /*La balise <pre> en HTML signifie "preformatted text" (texte preformate).
+        Elle sert a afficher du texte exactement tel qu'il est ecrit dans le code, en respectant 
+        es espaces, les tabulations et les retours a la ligne.*/
 
-      
+
+        //Tableau multidimensionnel
+        //Tableaua 2 dimension
+        $membres=array(
+            array('Pierre',24,'Ankara'),
+            array('Paul',30,'Istanbul'),
+            array('Jean',25,'Konya')
+        );
+        echo $membres[2][1];  //retourne l'arge de Hean qui est 25
+        echo '<br/>';
+
+        for ($i=0; $i < 3; $i++) { 
+            $membres_No=$i+1;
+            echo 'Membre numero '.$membres_No.'<br/>';
+            echo' <ul>';
+            for ($j=0; $j < 3; $j++) { 
+                echo '<li>'.$membres[$i][$j].'</li>';
+            }
+            echo '</ul>';
+        }
+
+
 
 
 
 
 
     ?>
-    
-    
+
 </body>
 </html>
