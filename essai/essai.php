@@ -234,7 +234,7 @@
         echo'La somme retourner par la fonction est de :'.$sum.'<br/>';
 
 
-        /*Les functions predefinies en php :les fonctions relative a string*/
+        /*Les functions predefinies en php :les fonctions relative a "string"*/
 
         //1-strlen :retourne le longuuer d'une chaine de caractere compte les caracteres acsentuer pour deux.élevé=7 au lieu de 5 car elle compte les octets pas les caracteres"
         echo ('La fonction "strlen" calcule le nombre de caractere d\'une chaine. Ex:"Bonjour à tous" a :'.strlen(" Bonjour à tous").' caracteres <br/>');
@@ -281,6 +281,9 @@
         $text4=implode("--",$text3);
         echo '<br/>';
         echo  $text4;
+
+
+    
 
 
 
