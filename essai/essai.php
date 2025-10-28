@@ -211,6 +211,32 @@
 
 
 
+        /* Les fonctions en php*/
+        function bonjour(){
+            echo 'Bonjour les codeurs php <br/>';
+        }
+        bonjour();
+
+        function bonjourUser($prenom){
+            echo 'Bonjour '.$prenom.' et bienvenue dans notre monde du codage <br/>';
+        }
+        bonjourUser('Barthez');
+
+        function UserInfo($nom,$departement){
+            echo 'Bonjour '.$nom.' et bienvenue dans le departement de '.$departement.'<br/>';
+        }
+        UserInfo('Barthez','Informatique');
+
+        function somme($b,$a){
+            return $a+$b;
+        }
+        $sum=somme(10,20);
+        echo'La somme retourner par la fonction est de :'.$sum;
+
+        
+
+
+
 
 
 
