@@ -231,7 +231,58 @@
             return $a+$b;
         }
         $sum=somme(10,20);
-        echo'La somme retourner par la fonction est de :'.$sum;
+        echo'La somme retourner par la fonction est de :'.$sum.'<br/>';
+
+
+        /*Les functions predefinies en php :les fonctions relative a string*/
+
+        //1-strlen :retourne le longuuer d'une chaine de caractere compte les caracteres acsentuer pour deux.élevé=7 au lieu de 5 car elle compte les octets pas les caracteres"
+        echo ('La fonction "strlen" calcule le nombre de caractere d\'une chaine. Ex:"Bonjour à tous" a :'.strlen(" Bonjour à tous").' caracteres <br/>');
+        //2-str_word_count:calcul le nombre de mots dans une chaine de caractere
+        echo ('La fonction "str_word_count" calcule le nombre de mots d\'une chaine. Ex:"Bonjour à tous" a :'.str_word_count(" Bonjour à tous").' mots <br/>');
+        /*cette fonction ne reconnait pas les caracteres ascentuer comme des mots .Ex à ne sera pas compte pour un mots.
+        pour le faire il va falloir presicer cela */
+        echo ('La fonction "str_word_count" calcule le nombre de mots d\'une chaine. Ex:"Bonjour à tous" a :'.str_word_count(" Bonjour à tous",0,'à').' mots <br/>');
+        //3-str_repeat() :permet de repeter une chaine de caractere un nombre de fois
+        echo str_repeat("Bonjour ",7);
+        //4-str_replace() : permet de remplacer certains caracteres par d'autre
+        echo '<br/>';
+        $text="Bonjour, comment allez-vous.Je vais bien Bonjour a vous aussi";
+        echo str_replace("Bonjour","Bonsoir",$text,$i);
+        echo '<br/>Nombre d remplacement de Bonjour par Bonsoir dans la chaine texte est de: '.$i;
+
+        //4-strtolower() et strtoupper() permet de mettre une chaine de caractere en majuscule ou en  miniuscule
+        //string position =strpos() recherche un caractere specifique dans une chaine de caractere et retourne la position de la premiere occurence du caractere 
+        echo '<br/>';
+        echo strpos($text,"Bonjour");  //renvoir 0 qui correspond a B la premiere lettre de Bonjour 
+        echo '<br/>';
+        echo strpos($text,'Bonsoir');  //retourne false
+
+        //5-la fonction htmlspecialchars():conertir des caracteres en entites html
+        //ici les caracteres html vont etre modifier:"<" => &lt,">" => &gt
+        //"&" =>&amp , " =>&quot ,' =>&#039
+        $str="J'aime le <strong>PHP</strong> </br>";
+        echo $str;
+        echo htmlspecialchars($str);
+        //la htmlspecialchars_decode() :effectue le meme travail que  htmlspecialchars()
+
+        
+        //6-Les fonction explode(),str_split():permte de separe les elements d'une chaine de cararctere a fonction d'un separateur(le separateur peut etre une virgules,un espace etc..)
+        $text2="Bonsoir a tous les codeurs.";
+        $text2_split=explode(" ",$text2);
+        echo '<br/>';
+        foreach ($text2_split as $valeurs){
+            echo $valeurs.'<br/>';
+        }
+        echo '<br/>';
+        print_r( $text2_split);
+        //7-implode(),join():permettent de convertir les elements d'un tableau en une chaine
+        $text3=array('Salut','a','tous','les','codeurs','du','monde','entier.');
+        $text4=implode("--",$text3);
+        echo '<br/>';
+        echo  $text4;
+
+
 
         
 
