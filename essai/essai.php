@@ -327,19 +327,52 @@
             echo 'L\'element Infos ne se trouve pas dans le tableau <br>';
         }
 
-        /*count() permet de compte le nombre d'element du tableau*/
+        /*6-count() permet de compte le nombre d'element du tableau*/
         echo 'Le nombre d\'element du tableau est de :'.count($matiere);
-        /*array_count_value() renvoi un tableau associatif avec les valeurs et le nombre de fois qu'ils apparaisse dans le tableau*/
+        
+        /*7-array_count_value() renvoi un tableau associatif avec les valeurs et le nombre de fois qu'ils apparaisse dans le tableau*/
         echo 'Les elements du tableau sontde ';
         echo '<pre>';
             print_r(array_count_values($matiere));
         echo '</pre>';
+        /*8-array_diff_key () et array_diff() permet de comparer les valeurs et les cles de deux tableaux et renvoi juste sous forme de tableau les elements differents dans les deux tableaux */
+        $couleur1_compare=array("a"=>"blue","b"=>"vert","c"=>"rouge","d"=>"noir","e"=>"marron");
+        $couleur2_comparant=array("a"=>"jaune","b"=>"noir","c"=>"vert","d"=>"rouge");
+        print_r(array_diff_key($couleur1_compare,$couleur2_comparant));
+        echo '<br/>';
+        print_r(array_diff($couleur1_compare,$couleur2_comparant));
+        echo '<br/>';
+        
+        
+        /*9-array_diff_key () et array_diff() permet de comparer les valeurs et les cles de deux tableaux et renvoi juste les elements semblales dans les deux tableaux */
+        print_r(array_intersect_key($couleur1_compare,$couleur2_comparant));
+        echo '<br/>';
+        print_r(array_intersect($couleur1_compare,$couleur2_comparant));
+        echo '<br/>';
+        /*10-array_fill() permet de remplir un tableau avec une valeur repeter un certain nombre de fois*/
+        print_r(array_fill(0,5,"vert")); //0:represente  l'indexe de debut, 5:l'index de fin et 'vert' la valeur qui remplir les tableaux
+        echo '<br/>';
+        /*11-array_fill_keys() permet de remplir un tableau avec une valeur repeter un certain nombre de fois associe a des cle scpecifique*/
+        $cles=array("a","b","c","d","e");
+        print_r(array_fill_keys($cles,"vert")); //0:represente  l'indexe de debut, 5:l'index de fin et 'vert' la valeur qui remplir les tableaux
 
+        /*12-  array_push() :permet de inserer un elment en fin de tableau 
+            array_pop():supprimer le dernier element du tableau et le stocker dans une variable
+            array_hift():supprimer le premier  element du tableau et le stocker dans une variable
+            array_unshitf():permet de inserer un elment en debut de tableau 
+        */
 
+        /*13-array_merge():permet de combiner plusieurs tableau en un nouveau*/
+        /*14-array_combine():creer un tableau associatif  a partir de deux tableau simple .Les cles sonts les valeurs du premier tableau en parametres et les valeurs sont celle du deuxieme tableau en parametre*/
+        /*15- array_unique():permet de supprimer les doublons dans un tableau cette fonction est sensible a la casse mais pas au type de valeur .Ici 4="4" mais ali!=Ali)*/
+        /*16-sort() permet de trier un tableau du plus petit au plus grand elle ne creer pas un nouveau tableau mais reoganirse juste notre tableau dans le bon ordre*/
+        /*17-rsort() permet de trier un tableau du plus grand au plus petit elle ne creer pas un nouveau tableau mais reoganirse juste notre tableau dans le bon ordre*/
 
-       
-
-
+        /*18-ksort():permet de trier un tableau associatif de facon croissante de ces cles
+            krsort():permet de trier un tableau associatif de facon decroissante de ces cles
+            asort():permet de trier un tableau associatif de facon croissante de ces valeurs
+            arsort():permet de trier un tableau associatif de facon croissante de ces valeurs
+        */
 
        
 
