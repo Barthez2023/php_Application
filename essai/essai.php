@@ -234,7 +234,7 @@
         echo'La somme retourner par la fonction est de :'.$sum.'<br/>';
 
 
-        /*Les functions predefinies en php :les fonctions relative a "string"*/
+        /*Les functions predefinies en php :les fonctions relative a string*/
 
         //1-strlen :retourne le longuuer d'une chaine de caractere compte les caracteres acsentuer pour deux.élevé=7 au lieu de 5 car elle compte les octets pas les caracteres"
         echo ('La fonction "strlen" calcule le nombre de caractere d\'une chaine. Ex:"Bonjour à tous" a :'.strlen(" Bonjour à tous").' caracteres <br/>');
@@ -283,7 +283,65 @@
         echo  $text4;
 
 
-    
+        /*Les fonctions affetant les array*/
+        //1-array_keys() retourne les cles et les indexes d'un tableaudans un nouveau tableau 
+
+        $voiture=array(
+            "citroen"=>"DS3",
+            "Renault"=>"Clio",
+            "Peugeot"=>"306",
+            "Peugeot2"=>306
+
+        );
+        $matiere =array("Maths","Anglais","Infos");
+        echo '<br/>';
+        echo '<br/>';
+        echo 'Les fonctions affetant les array <br/>';
+        print_r(array_keys($voiture));
+        echo '<br/>';
+        print_r(array_keys($voiture,306,true));// recherche la cle relative a la voiture 306(true precise que 306 est un entier)
+
+        //2-array_values() retourne les valeurs d'un tableau dans un nouveau tableau 
+        echo '<br/>';
+        echo '<pre>';
+            print_r(array_values($voiture));
+        echo '</pre>';
+
+        //3-array_key_exixits() :verifie si une cle existe ou pas  dans un tableau
+       if (array_key_exists("citroenu",$voiture)) {  
+            echo 'La cle existe <br>';
+       } 
+       else {
+            echo 'La cle n\'existe pas <br>';
+       }
+
+       //4-aray-search():recherche une valeur dans un tableau et retourne la cle qui lui est associe
+       echo(array_search("DS3",$voiture,true));  //true permet de preciser que la valeur est une chaine de caractere
+
+       /*5-in_array: permet de recherche une valeur dans un tableau.Cette fonction est sensible a la casse mais pas part au type de donnes*/
+        echo '<br/>';
+        if (in_array("Infos",$matiere,true)) {
+            echo 'L\'element Infos se trouve dans le tableau <br>';
+        }
+        else {
+            echo 'L\'element Infos ne se trouve pas dans le tableau <br>';
+        }
+
+        /*count() permet de compte le nombre d'element du tableau*/
+        echo 'Le nombre d\'element du tableau est de :'.count($matiere);
+        /*array_count_value() renvoi un tableau associatif avec les valeurs et le nombre de fois qu'ils apparaisse dans le tableau*/
+        echo 'Les elements du tableau sontde ';
+        echo '<pre>';
+            print_r(array_count_values($matiere));
+        echo '</pre>';
+
+
+
+       
+
+
+
+       
 
 
 
