@@ -331,7 +331,7 @@
         echo 'Le nombre d\'element du tableau est de :'.count($matiere);
         
         /*7-array_count_value() renvoi un tableau associatif avec les valeurs et le nombre de fois qu'ils apparaisse dans le tableau*/
-        echo 'Les elements du tableau sontde ';
+        echo 'Les elements du tableau sont de ';
         echo '<pre>';
             print_r(array_count_values($matiere));
         echo '</pre>';
@@ -373,8 +373,74 @@
             asort():permet de trier un tableau associatif de facon croissante de ces valeurs
             arsort():permet de trier un tableau associatif de facon croissante de ces valeurs
         */
+        echo'</br>';
+        echo 'De retour apres uen periode d\'examen intense </br>';
 
-       
+        print("LES FONCTION DE DATE");
+        /*Caractere utile
+            d-represente le jour du mois (de 01 a 31)
+            m-represente un mois( de 01 a 12)
+            n-represente un mois( de 1 a 12)
+            Y-represente l'annee( Ex 2025)
+            N-represente un jour de la semaine en chiffre( Lundi=1 dimanche=7)
+            l-represente un jour de la semaine(ex:Lundi)
+            H-represente les heures(de 00 a 23)
+            i-represente les minutes(de 00 a 59)
+            s-represente les secondes(de 00 a 59)
+        */
+        //time ():donne le nombre de seconde ecooule depuis le premier janvier 1970
+        echo '</br>';
+        echo time();
+        //date():retourne une date sous le formet souhaite
+        $currentdate=date("d/m/Y");                      //d=jour m=mois Y=anne
+        echo '</br>Nous sommes le :' .$currentdate;
+        echo '</br> Aujourd\'hui c\'est '.date("l");   //l donne le current jour
+        echo '</br> Il est '.date("H:i:s");            //H =heure i=minute s=seconde
+
+
+        //affichez les jours et les mois en francais
+
+        $jour=array("","Lundi","Mardi","Mercredi","jeudi","Vendredi","Samedi","Dimanche",);
+        $mois=array("","Janvier","Fevrier","Mars","Avril","Mai","Juin","Juillet","Aout","Septembre","Octobre","Novembre","Decembre",);
+
+        $datefrancais=$jour[date("N")].' '.date("d").' '.$mois[date("n")].' '.date("Y");
+        echo'</br> Nous sommes le '.$datefrancais;
+
+        //affichage de la date locale
+        setlocale(LC_TIME,'tr-TR');
+        echo '</br> Nous sommes le '.strftime("%A %d %B %Y");
+        echo '</br> Il est actuellemnt '.strftime("%H : %M : %S")." UTC"; 
+        // Affichage de la date formatée
+        // %A: Nom complet du jour (ex: Perşembe)
+        // %d: Jour du mois (ex: 20)
+        // %B: Nom complet du mois (ex: Kasım)
+        // %Y: Année (ex: 2025)
+       //la mathode strtime est depasse a la place on peut utiliser "date_default_timezone_set("Europe/Istanbul")";
+       date_default_timezone_set("Europe/Istanbul");
+       echo '</br> Il est actuellement ' . date("H : i : s") . " en Turquie";
+
+       //Verification de la validite de la date
+       $date1=checkdate(12,31,2014);
+       $date2=checkdate(13,31,2014);
+       $date3=checkdate(01,25,-100);
+       if ($date1) {
+            echo '</br> La date est valide';
+       }
+       else {
+            echo '</br> La date n\'est pas valide';
+       }
+       if ($date2) {
+            echo '</br> La date est valide';
+       }
+       else {
+            echo '</br> La date n\'est pas valide';
+       }
+       if ($date3) {
+            echo '</br> La date est valide';
+       }
+       else {
+            echo '</br> La date n\'est pas valide';
+       }
 
 
 
