@@ -444,6 +444,23 @@
 
 
 
+       /*Les constantes en PhP*/
+       echo '</br> LES CONSTANTES EN PHP';
+       //La valeur d'une constante est...constante(exception:constantes "magiques")
+       //sa valeur ne peut pas etre modifier dans le programme
+
+       define("BIENVENUE","Bienvenue sur mon site ");  //definition d'une constante define(nom de la constante,valeur de la constante)
+       echo'</br>'.BIENVENUE;
+
+       //Les constatnte magic:sont insensible a la casse et leur valeurs peuvent changer au cour du temps
+       /*
+            __FILE__:contient le chemin complet et le nom du fichier 
+            __DIR__ :contient le nom du dossier dans lequel ce trouve le fichier
+            __FUNCTION__:contient le nom de la fonction dans laquel la constante est placee
+            __LINE__:retourne le numero de la  ligne dans laquel le fichier est appele
+       */
+
+
         
 
 
