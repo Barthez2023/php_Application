@@ -488,6 +488,46 @@
         fwrite($definition,"Cette definiton me semble agreable et tres technique.");
         fclose($definition);
 
+        /*  Variables superglobales en PhP*/
+        echo '</br>';
+        echo '</br>';
+        echo ' Variables superglobales en PhP</br>';
+
+        /*Les super global est php 
+            $GLOBALS
+            $_SERVER
+            $_REQUEST
+            $_POST
+            $_GET
+            $_FILE
+            $_ENV
+            $_COOKIE
+            $_SESSION
+            ces variables sont creer de facon automatique par le php on aurons juste besoin de les appeles et de les utilises
+        */
+
+        //$GLOBALS :permet d'avoir acess au variable local .Cela reduit la restriction sur la portee des variables   
+        $x=20;
+        $y=30;
+        function mul(){
+            $GLOBALS['z']=$GLOBALS['x']*$GLOBALS['y'];
+        }
+        mul();
+        echo $z;
+
+        //$_SERVER :contient des infos de type serveur ou system comme le nom du script a execute actuelement,l'adress ip du serveur qui heberge la page,le nom du serveur hebergeur de la page
+        echo '</br>';
+        echo $_SERVER['PHP_SELF'].'</br>';    //donne la nom du fichier par rapport a la racine du site web
+        echo $_SERVER['SERVER_ADDR'].'</br>'; //l'adress du serveur
+        echo $_SERVER['SERVER_NAME'].'</br>';
+        echo $_SERVER['SCRIPT_NAME'].'</br>';
+        echo $_SERVER['HTTP_HOST'].'</br>';
+
+
+        //$_REQUEST: permet de recuprrer les informations apres l'envoi d'un formulaire html
+
+        
+
 
         
 
