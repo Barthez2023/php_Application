@@ -461,6 +461,34 @@
        */
 
 
+
+        /* Opérations sur les fichiers en PhP */
+        echo '</br>';
+        echo '</br>';
+        echo ' Opérations sur les fichiers en PhP</br>';
+        $definition=fopen("definition.txt","r+");
+        //lire un fichier
+        /*$affichafe=fread($definition,1000);   //1000 represente le nombre maximun de bit qui peut etre lu dans le fichier
+        echo $affichafe;*/
+
+        //fgets():permet de lire le fichier ligne par ligne
+        /*$ligne1=fgets($definition,1000);
+        echo '</br>';
+        echo  $ligne1;*/
+        while (!feof($definition)) {
+            $ligne1=fgets($definition,1000);
+            echo '</br>';
+            echo  $ligne1;
+        }
+
+        //fseek() permet de modifier  la position du curseur dans un fichier
+
+        fseek($definition,50);  //place le curseur a la position 50 de notre fichier
+        //ecrire dans un ficiher 
+        fwrite($definition,"Cette definiton me semble agreable et tres technique.");
+        fclose($definition);
+
+
         
 
 
