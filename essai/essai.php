@@ -526,17 +526,41 @@
 
         //$_REQUEST: permet de recuprrer les informations apres l'envoi d'un formulaire html
 
-        
 
 
-        
+        //La Programation oriente object en php voir le fichier visiteur.php 
+        echo'LA PROGRAMMATION ORIENTE OBJECT POO EN PHP </br>';
+        echo 'Voir le fichier visiteur.php </br>';
+        echo '</br>';
 
 
+        echo'Gestion des erreurs en PhP </br>';
 
+        //La methode die() :arrete l'execution du script et de remvoye un message a l'utilisateur elle prend en parametre le message de l'erreur a envoye
+        /*if (!file_exists('inconnu.txt')) {
+           die("Fichier n'exite pas");
+        }
+        else {
+            $fichier=fopen("inconnu.txt");
+        }*/
 
+        echo'Gestion des erreur avec le bloc Try-Catch </br>';
 
+        function Division($x,$y){
+            if ($y==0) {
+                throw new Exception("Division par zero impossible");
+            }
+            return $x/$y;
+        }
 
+        try {
+            echo Division(4,4).'</br>';
+            echo Division(2,0).'</br>';
+        } catch (Exception $e) {
+            echo 'Message d\'erreur :'.$e->getMessage();
+        }
 
+    
     ?>
 
 </body>
