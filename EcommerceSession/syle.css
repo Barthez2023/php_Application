@@ -1,0 +1,119 @@
+/* ============================
+   TABLE – STYLE GÉNÉRAL
+   ============================ */
+
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+    margin: 30px 0;
+}
+
+.table-style {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* ============================
+   EN-TÊTE DE TABLE
+   ============================ */
+
+.table-style thead {
+    background: linear-gradient(135deg, #4a90e2, #357ABD);
+    color: #ffffff;
+}
+
+.table-style th {
+    padding: 14px 16px;
+    text-align: center;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* ============================
+   CORPS DE TABLE
+   ============================ */
+
+.table-style td {
+    padding: 12px 16px;
+    border-bottom: 1px solid #e0e0e0;
+    color: #333;
+    text-align: center;
+}
+
+/* Lignes alternées */
+.table-style tbody tr:nth-child(even) {
+    background-color: #f7f9fc;
+}
+
+/* Effet hover */
+.table-style tbody tr:hover {
+    background-color: #eef4ff;
+    transition: background-color 0.3s ease;
+}
+
+/* ============================
+   ALIGNEMENTS
+   ============================ */
+
+.text-center {
+    text-align: center;
+}
+
+.text-right {
+    text-align: right;
+}
+
+/* ============================
+   ACTIONS / BOUTONS DANS TABLE
+   ============================ */
+
+.table-btn {
+    padding: 6px 12px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.table-btn.edit {
+    background-color: #4caf50;
+    color: #fff;
+}
+
+.table-btn.delete {
+    background-color: #e74c3c;
+    color: #fff;
+}
+
+.table-btn:hover {
+    opacity: 0.85;
+    transform: scale(1.05);
+}
+
+/* ============================
+   TABLE RESPONSIVE
+   ============================ */
+
+@media (max-width: 768px) {
+    .table-style {
+        font-size: 14px;
+    }
+
+    .table-style th,
+    .table-style td {
+        padding: 10px;
+    }
+}
+/*.table-style th,
+.table-style td {
+    text-align: center;
+    vertical-align: middle;
+}*/
